@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .row.d-flex.justify-content-center.container
+  .col-md-12
+    .card-hover-shadow-2x.mb-3.card
+      .card-header-tab.card-header
+        .card-header-title.font-size-lg.font-weight-normal
+          i.fa.fa-tasks
+          |  Lista de tarefas
+        .new-task
+          a.btn.btn-primary(href="/todos/add") Adicionar
+      if todos.length > 0
+        .scroll-area-sm
+          perfect-scrollbar.ps-show-limits
+            .ps.ps--active-y(style='position: static;')
+              .ps-content
+                ul.list-group.list-group-flush
+                  each todo in todos
+                    li.list-group-item
+                      .todo-indicator.bg-warning
+                      .widget-content.p-0
+                        .widget-content-wrapper
+                          .widget-content-left
+                            .widget-heading
+                              =todo.task
+                          .widget-content-right
+                            a.border-0.btn-transition.btn.btn-outline-danger(href='javascript:void(0)', data-id=todo.id)
+                              i.fa.fa-trash
+        .d-block.text-right.card-footer
+

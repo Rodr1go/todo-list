@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .row.d-flex.justify-content-center.container
+    .col-md-12
+      .card
+      .card-hover-shadow-2x.mb-3.card
+        .card-header-tab.card-header
+          .card-header-title.font-size-lg.font-weight-normal         
+            | Adicionar Tarefa
+        .card-body
+          .form-group  
+            form(action="/todos/add", method="POST")
+              input.form-control(type='text', placeholder='Escreva sua tarefa aqui', name='task', required)
+              button.btn.btn.btn-primary(type="submit") Salvar
+  
