@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(".btn-transition.btn.btn-outline-danger").click(function(){
       var id = $(this).data('id')
       $.ajax({
-        method: "GET",
+        method: "DELETE",
         url: "/todos/"+id
       })
       

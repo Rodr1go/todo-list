@@ -24,6 +24,6 @@ router.post('/todos/add', controller.postAdd)
  * GET /todos/:id
  * Remove task.
  */
-router.get('/todos/:id', controller.getRemove)
+router.delete('/todos/:id', controller.remove)
 
 module.exports = router
